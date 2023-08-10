@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,700&display=swap");
+
+.header {
+  color: rgb(255, 253, 253);
+}
+.header::after {
+  content: "";
+  opacity: 0.8;
+  background: rgba(224, 224, 224,0.9) url(../assets/header-banner.jpg) no-repeat fixed
+    top;
+  background-blend-mode: luminosity;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  height: 800px;
+}
+.info {
+  margin-top: 300px;
+}
+.info h1 {
+  text-align: center;
+  color: rgb(255, 208, 0);
+  font-size: 5em;
+  padding: 0 20px;
+}
+.info h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  padding: 0 20px;
+}
+.header-btn {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.header-btn button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  outline: 4px solid rgb(255, 208, 0);
+  outline-offset: -3px;
+  height: 60px;
+  width: 205px;
+  font-size: 28px;
+  font-weight: 900;
+}
+.header-btn button:hover {
+  background-color: rgb(255, 208, 0);
+  transition: 0.3s ease-in;
+  outline-offset: 5px;
+}
+.blank-sec {
+  height: 238px;
+  background-color: transparent;
+}
+.about-sec {
+  background-image: linear-gradient(rgba(141, 141, 142, 0.4),rgba(0,0,0,0.9)),url(../assets/image.png);
+  background-position:bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.about-info{
+    margin-top: 80px;
+    padding-left: 80px;
+    margin-bottom: 20px;
+}
+.about-info h1 {
+  color: #fff;
+  font-size: 4em;
+}
+.about-info span {
+  font-family: "Titillium Web", sans-serif;
+  color: rgb(255, 208, 0);
+}
+.about-info h2{
+    color: #fff;
+    font-size: 30px;
+    text-align: justify;
+    padding-right: 25px;
+    margin-bottom: 50px;
+}
+.car {
+    padding-left: 0;
+    margin-left: 0;
+    padding-top: 80px;
+}
+.test{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../assets/10916.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+@media only screen and (max-width: 1550px) {
+    .about-sec{
+        flex-direction: column;
+    }
+    .car{
+        padding-top: 0;
+    }
+}
+@media only screen and (max-width: 1241px) {
+  .info h1 {
+    text-align: center;
+    font-size: 3em;
+  }
+  .info h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+  }
+  .blank-sec {
+    height: 299px;
+  }
+  .car img {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 943px) {
+  .blank-sec {
+    height: 263px;
+  }
+}
+@media only screen and (max-width: 663px) {
+  .blank-sec {
+    height: 190px;
+  }
+}
+@media only screen and (max-width: 489px) {
+  .blank-sec {
+    height: 154px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .blank-sec {
+    height: 218px;
+  }
+  .info {
+    margin-top: 200px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .blank-sec {
+    height: 216px;
+  }
+  .info {
+    margin-top: 130px;
+  }
+}

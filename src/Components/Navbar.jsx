@@ -30,10 +30,10 @@ function Navbar() {
                     fontSize:'50px'
                 }}>K</span>arpool'n</h1>
                 <nav ref={navRef}>
-                    <a className="tag-1" href="/#">Home</a>
+                    <a className="tag-1" href="#header">Home</a>
                     <a className="tag-2" href="#about-sec">About Us</a>
-                    <a className="tag-3" href="/#">Blog</a>
-                    <a className="tag-4" href="/#">About me</a>
+                    <a className="tag-3" href="#cities">Cities</a>
+                    <a className="tag-4" href="#cause">Our Cause</a>
                     <button
                         className="nav-btn nav-close-btn"
                         onClick={showNavbar}>

@@ -92,11 +92,88 @@
     margin-left: 0;
     padding-top: 80px;
 }
-.test{
+.moto{
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../assets/10916.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tagline{
+  padding: 0 40px;
+}
+.tagline h1{
+  font-size: 4em;
+  color: #fff;
+  text-align: center;
+}
+.tagline p{
+  text-align: center;
+}
+.tagline span{
+  font-size: 4em;
+  color: #fff;
+}
+#tag-alph{
+  font-size: 120px;
+  color: rgb(255, 208, 0);
+}
+.cities{
+  background-color: rgba(228, 228, 228, 0.4);
+}
+.cities h1{
+  font-size: 5em;
+  color: rgb(255, 208, 0);
+  text-align: center;
+}
+.locations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 15px;
+}
+.city-1 {
+  margin-right: 10px;
+  position: relative;
+}
+.city-2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+.city-3 {
+  margin-left: 10px;
+  position: relative;
+}
+.locations img {
+  border-radius: 16px;
+}
+.layer {
+  background: rgba(111, 119, 123, 0.7);
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 16px;
+  transition: 0.7s ease;
+}
+:is(.city-1, .city-2, .city-3):hover .layer {
+  height: 100%;
+}
+.layer span{
+  color: rgb(255, 208, 0);
+}
+.layer h2 {
+  text-align: center;
+  margin-top: 315px;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 70px;
 }
 @media only screen and (max-width: 1550px) {
     .about-sec{

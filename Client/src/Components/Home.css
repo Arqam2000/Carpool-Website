@@ -38,6 +38,10 @@
   display: flex;
   justify-content: center;
 }
+.header-btn button a{
+  color: #fff;
+  text-decoration: none;
+}
 .header-btn button {
   color: #fff;
   background-color: transparent;
@@ -175,6 +179,21 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 70px;
 }
+.signup{
+    background-color: rgba(228, 228, 228, 0.4);
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+  height: 600px;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  gap: 100px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 @media only screen and (max-width: 1550px) {
     .about-sec{
         flex-direction: column;
@@ -200,9 +219,30 @@
     width: 40%;
   }
 }
+@media only screen and (max-width: 1100px){
+  .signup{
+    height: 1500px;
+  }
+  .form{
+    flex-direction: column;
+    height: max-content;
+    gap: 50px;
+  }
+}
 @media only screen and (max-width: 943px) {
   .blank-sec {
     height: 263px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .signup-img img{
+    display: none;
+  }
+  .signup{
+    height: max-content;
+  }
+  .form{
+    width: 550px;
   }
 }
 @media only screen and (max-width: 663px) {

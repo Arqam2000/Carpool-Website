@@ -10,6 +10,7 @@ import car from '../assets/car-1.png'
 import karachi from "../assets/karachi.png";
 import islamabad from "../assets/islamabad.jpg";
 import lahore from "../assets/lahore.png";
+import signupImg from '../assets/signup-img.png'
 import Signup from "./Signup";
 
 function Home() {
@@ -28,7 +29,7 @@ function Home() {
           <h1>Make the most with Karpool'n</h1>
           <h2 data-aos="flip-up" data-aos-duration="1500">Charge for Empty Seats in Your Car & Share Fuel Cost, Reduce Traffic & Global Warming</h2>
           <div className="header-btn">
-            <button>Get Started</button>
+            <button><a href="#Sign-up">Get Started</a></button>
           </div>
         </div>
       </section>
@@ -49,22 +50,22 @@ function Home() {
 
       <section className="cities" id="cities">
         <h1>Cities we operate in:</h1>
-      <div class="locations">
-        <div class="city-1" data-aos="flip-left" data-aos-duration="1000">
+      <div className="locations">
+        <div className="city-1" data-aos="flip-left" data-aos-duration="1000">
           <img src={karachi} alt="" />
-          <div class="layer">
+          <div className="layer">
             <h2><span>K</span>ARACHI</h2>
           </div>
         </div>
-        <div class="city-2" data-aos="flip-left" data-aos-duration="1000">
+        <div className="city-2" data-aos="flip-left" data-aos-duration="1000">
           <img src={islamabad} alt="" />
-          <div class="layer">
+          <div className="layer">
             <h2><span>I</span>SLAMABAD</h2>
           </div>
         </div>
-        <div class="city-3" data-aos="flip-left" data-aos-duration="1000">
+        <div className="city-3" data-aos="flip-left" data-aos-duration="1000">
           <img src={lahore} alt="" />
-          <div class="layer">
+          <div className="layer">
             <h2><span>L</span>AHORE</h2>
           </div>
         </div>
@@ -74,7 +75,7 @@ function Home() {
       <section className="moto" id="cause">
         <div className="tagline">
           <h1><span id="tag-alph">S</span>hare the Ride, Multiply the Benefits:</h1>
-          <p>
+          <div>
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
@@ -82,14 +83,17 @@ function Home() {
                   .start()
               }}
             />
-          </p>
+          </div>
         </div>
       </section>
 
 
       <section className="signup">
-        <div className="form">
+        <div className="form" data-aos="flip-up" data-aos-duration="1000" id="Sign-up">
           <Signup />
+        <div className="signup-img">
+          <img src={signupImg} alt="" />
+        </div>
         </div>
       </section>
     </>

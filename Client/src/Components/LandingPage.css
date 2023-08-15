@@ -187,12 +187,21 @@
     align-items: center;
 }
 .form{
-  height: 600px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: max-content;
   background-color: #fff;
   border-radius: 16px;
   display: flex;
   gap: 100px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.signup-img p{
+  text-align: center;
+  font-size: 1.4em;
+}
+.signup-img a{
+  text-decoration: none;
 }
 @media only screen and (max-width: 1550px) {
     .about-sec{

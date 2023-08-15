@@ -1,7 +1,30 @@
-.signup-form{
-    padding-left: 50px;
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.signup-form h1{
+.login{
+    background-color: rgba(228, 228, 228, 0.4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: max-content;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  gap: 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.login-form{
+    padding-top: 70px;
+    padding-right: 50px;
+}
+.login-form h1{
     text-align: left;
     margin: 20px 10px;
     font-size: 4em;
@@ -9,7 +32,7 @@
 }
 .form-group{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 10px;
 }
 hr{
@@ -32,7 +55,8 @@ input{
 input:active{
     border: none;
 }
-.sign-in-btn{
+.log-in-btn{
+    margin-left: 20px;
     height: 50px;
     width: 200px;
     margin-bottom: 20px;
@@ -44,13 +68,16 @@ input:active{
     font-weight: 600;
     transition: ease-out;
 }
-.sign-in-btn:hover{
+.log-in-btn:hover{
     border: 2px solid rgb(255, 208, 0);
     background-color: transparent;
     color: rgb(255, 208, 0);
 }
 
 @media only screen and (max-width: 1100px){
+    .form{
+        flex-direction: column-reverse;
+    }
     hr{
         width: 90%;
     }

@@ -2,19 +2,37 @@ import React, { useState } from 'react'
 import './Signup.css'
 import { FaUser, FaEnvelope, FaPhoneAlt, FaLock } from "react-icons/fa";
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 
 const Signup = () => {
 
-  const [f_name, setF_name] = useState()
-  const [l_name, setL_name] = useState()
-  const [phone, setPhone] = useState()
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [f_name, setF_name] = useState('')
+  const [l_name, setL_name] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/', { f_name, l_name, email, phone, password })
-      .then(result => console.log(result))
+    if (!f_name || !l_name || !email || !phone || !password) {
+      alert("All fields are required.");
+      return;
+    }
+    const userData = {
+      f_name: f_name,
+      l_name: l_name,
+      email: email,
+      phone: phone,
+      password: password
+    };
+    console.log(userData)
+    axios.post('http://localhost:3001/', userData, { headers: { 'Content-Type': 'application/json' } })
+    .then(result => {
+      console.log(result);
+      navigate('/login');
+    })
       .catch(err => console.log(err))
   }
 
@@ -28,7 +46,7 @@ const Signup = () => {
             <label htmlFor="firstname">
               <FaUser />
             </label>
-            <input type="text" name="firstName" id="firstName" autoComplete='off' placeholder='First Name'
+            <input type="text" name="f_name" id="firstName" autoComplete='off' placeholder='First Name'
               onChange={(e) => setF_name(e.target.value)}
             />
           </div>
@@ -37,7 +55,7 @@ const Signup = () => {
             <label htmlFor="lastname">
               <FaUser />
             </label>
-            <input type="text" name="lastName" id="lastName" autoComplete='off' placeholder='Last Name'
+            <input type="text" name="l_name" id="lastName" autoComplete='off' placeholder='Last Name'
               onChange={(e) => setL_name(e.target.value)}
             />
           </div>
@@ -69,7 +87,7 @@ const Signup = () => {
             />
           </div>
           <hr />
-          <button className=''>Sign In</button>
+          <button className='sign-in-btn'>Sign In</button>
         </form>
       </div>
     </>

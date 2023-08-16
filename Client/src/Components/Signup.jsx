@@ -3,6 +3,7 @@ import './Signup.css'
 import { FaUser, FaEnvelope, FaPhoneAlt, FaLock } from "react-icons/fa";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import Modal from './Modal';
 
 const Signup = () => {
 
@@ -12,12 +13,14 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const [openModal, setOpenModal] = useState(false)
+
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!f_name || !l_name || !email || !phone || !password) {
-      alert("All fields are required.");
+      setOpenModal(true)
       return;
     }
     const userData = {
@@ -27,8 +30,7 @@ const Signup = () => {
       phone: phone,
       password: password
     };
-    console.log(userData)
-    axios.post('http://localhost:3001/', userData, { headers: { 'Content-Type': 'application/json' } })
+    axios.post('http://localhost:3001/', userData)
     .then(result => {
       console.log(result);
       navigate('/login');
@@ -89,7 +91,13 @@ const Signup = () => {
           <hr />
           <button className='sign-in-btn'>Sign In</button>
         </form>
-      </div>
+        </div>
+        {openModal && (
+          <Modal 
+            closeModal={setOpenModal}
+            message={"Please fill out all fields"}
+          />
+        )}
     </>
   )
 }

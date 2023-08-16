@@ -50,26 +50,26 @@ function LandingPage() {
 
       <section className="cities" id="cities">
         <h1>Cities we operate in:</h1>
-      <div className="locations">
-        <div className="city-1" data-aos="flip-left" data-aos-duration="1000">
-          <img src={karachi} alt="" />
-          <div className="layer">
-            <h2><span>K</span>ARACHI</h2>
+        <div className="locations">
+          <div className="city-1" data-aos="flip-left" data-aos-duration="1000">
+            <img src={karachi} alt="" />
+            <div className="layer">
+              <h2><span>K</span>ARACHI</h2>
+            </div>
+          </div>
+          <div className="city-2" data-aos="flip-left" data-aos-duration="1000">
+            <img src={islamabad} alt="" />
+            <div className="layer">
+              <h2><span>I</span>SLAMABAD</h2>
+            </div>
+          </div>
+          <div className="city-3" data-aos="flip-left" data-aos-duration="1000">
+            <img src={lahore} alt="" />
+            <div className="layer">
+              <h2><span>L</span>AHORE</h2>
+            </div>
           </div>
         </div>
-        <div className="city-2" data-aos="flip-left" data-aos-duration="1000">
-          <img src={islamabad} alt="" />
-          <div className="layer">
-            <h2><span>I</span>SLAMABAD</h2>
-          </div>
-        </div>
-        <div className="city-3" data-aos="flip-left" data-aos-duration="1000">
-          <img src={lahore} alt="" />
-          <div className="layer">
-            <h2><span>L</span>AHORE</h2>
-          </div>
-        </div>
-      </div>
       </section>
 
       <section className="moto" id="cause">
@@ -91,12 +91,12 @@ function LandingPage() {
       <section className="signup">
         <div className="form" data-aos="flip-up" data-aos-duration="1000" id="Sign-up">
           <Signup />
-        <div className="signup-img">
-          <img src={signupImg} alt="" />
-          <p>Already Have an account? <a href="/login">Log In</a></p>
+          <div className="signup-img">
+            <img src={signupImg} alt="" />
+            <p>Already Have an account? <a href="/login">Log In</a></p>
+          </div>
         </div>
-        </div>
-      </section>
+        </section>
     </>
   )
 }

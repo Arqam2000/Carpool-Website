@@ -17,6 +17,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      setOpenModal(true)
+      setModalMessage("Please fill out all fields")
+      return;
+    }
     axios.post('http://localhost:3001/login', { email, password })
       .then(result => {
         console.log(result)

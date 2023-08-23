@@ -14,6 +14,7 @@ const Signup = () => {
   const [password, setPassword] = useState('')
 
   const [openModal, setOpenModal] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
 
   const navigate = useNavigate()
 
@@ -21,6 +22,7 @@ const Signup = () => {
     e.preventDefault();
     if (!f_name || !l_name || !email || !phone || !password) {
       setOpenModal(true)
+      setModalMessage("Please fill out all fields")
       return;
     }
     const userData = {
@@ -30,9 +32,14 @@ const Signup = () => {
       phone: phone,
       password: password
     };
-    axios.post('http://localhost:3001/', userData)
+    axios.post('http://localhost:3001/signup', userData)
     .then(result => {
       console.log(result);
+      if(result.data == "user already exists"){
+        setOpenModal(true)
+        setModalMessage("user already exists")
+        return;
+      }
       navigate('/login');
     })
       .catch(err => console.log(err))
@@ -95,7 +102,7 @@ const Signup = () => {
         {openModal && (
           <Modal 
             closeModal={setOpenModal}
-            message={"Please fill out all fields"}
+            message={modalMessage}
           />
         )}
     </>

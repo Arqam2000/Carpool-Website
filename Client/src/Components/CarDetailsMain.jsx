@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./CarDetailsMain.css";
 import { Navigate } from "react-router";
-import car from "../assets/car-1.png";
+import car from "../assets/car-carform.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CarForm from "./CarForm";
@@ -24,7 +24,7 @@ function CarDetailsMain() {
           And Enjoy with Your New <span className="sp">K</span>arpool Partner
         </h1>
       </div>
-      <div>
+      <div className="car-d">
         <img src={car} alt="" className="car" />
       </div>
       <div className="car-form">

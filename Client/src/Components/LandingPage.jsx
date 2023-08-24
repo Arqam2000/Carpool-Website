@@ -27,7 +27,7 @@ function LandingPage() {
       <section className='header' id="header">
         <div className="info">
           <h1>Make the most with Karpool'n</h1>
-          <h2 data-aos="flip-up" data-aos-duration="1500">Charge for Empty Seats in Your Car & Share Fuel Cost, Reduce Traffic & Global Warming</h2>
+          <h2>Charge for Empty Seats in Your Car & Share Fuel Cost, Reduce Traffic & Global Warming</h2>
           <div className="header-btn">
             <button><a href="#Sign-up">Get Started</a></button>
           </div>
@@ -44,7 +44,7 @@ function LandingPage() {
           <h2>Ready to ditch the solo drive? Hop in with RideShare+ and let's ride toward a brighter, shared future! 🌟</h2>
         </div>
         <div className="about-car">
-          <img src={car} alt="" data-aos="fade-right" data-aos-duration="1500" />
+          <img src={car} alt="" data-aos="fade-right" data-aos-duration="1000"/>
         </div>
       </section>
 
@@ -75,7 +75,7 @@ function LandingPage() {
       <section className="moto" id="cause">
         <div className="tagline">
           <h1><span id="tag-alph">S</span>hare the Ride, Multiply the Benefits:</h1>
-          <div>
+          <div className="typewriter">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
@@ -96,7 +96,7 @@ function LandingPage() {
             <p>Already Have an account? <a href="/login">Log In</a></p>
           </div>
         </div>
-        </section>
+      </section>
     </>
   )
 }

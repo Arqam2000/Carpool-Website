@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
 }
-.form{
+.Form{
   margin-top: 50px;
   margin-bottom: 50px;
   height: max-content;
@@ -30,7 +30,7 @@
     font-size: 4em;
     color: rgb(255, 208, 0);;
 }
-.form-group{
+.Form-group{
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
@@ -75,7 +75,7 @@ input:active{
 }
 
 @media only screen and (max-width: 1100px){
-    .form{
+    .Form{
         flex-direction: column-reverse;
     }
     .login-form{

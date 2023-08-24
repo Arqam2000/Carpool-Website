@@ -77,10 +77,10 @@ nav {
 	
 	header nav {
 		position: fixed;
-		top: -100vh;
+		top: -102vh;
 		left: 0;
 		height: 40%;
-		width: 100%;
+		width: 100vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

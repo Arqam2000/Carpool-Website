@@ -41,7 +41,7 @@ function Login() {
   return (
     <>
       <section className="login">
-        <div className="form">
+        <div className="Form">
           <div className="login-img">
             <img src={loginImg} alt="" />
           </div>

@@ -9,9 +9,13 @@ app.use(cors())
 
 mongoose.connect(uri)
 
-const route = require("./Routes/route")
+const route = require("./Routes/auth")
+const car_route = require("./Routes/CarDetails")
 
 app.use("/", route)
+app.use("/", car_route)
+
+
 
 
 app.listen(3001,() => {

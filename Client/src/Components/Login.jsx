@@ -25,7 +25,8 @@ function Login() {
     axios.post('http://localhost:3001/login', { email, password })
       .then(result => {
         console.log(result)
-        if (result.data === "Success") {
+        if (result.data.message === "Success") {
+          localStorage.setItem('token', JSON.stringify(result.data.token))
           navigate('/home')
         } else if (result.data === "Incorrect Password") {
           setOpenModal(true)

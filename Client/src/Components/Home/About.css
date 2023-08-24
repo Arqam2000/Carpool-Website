@@ -1,0 +1,46 @@
+.btn-c {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.btn {
+  width: 120px;
+  height: 40px;
+  font-size: medium;
+  border-radius: 5px;
+  border: 0.5px solid;
+  background-color: rgb(255, 208, 0);
+  color: white;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: white;
+  color: rgb(255, 208, 0);
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10vh;
+}
+.about-main h1 {
+  color: rgb(255, 208, 0);
+  font-size: 60px;
+}
+.about-main p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.about-main ul {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.about-main li {
+  direction: ltr;
+  font-weight: 500;
+  font-size: 18px;
+}

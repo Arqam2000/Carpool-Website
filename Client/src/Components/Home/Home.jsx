@@ -7,7 +7,7 @@ function Home() {
   const [click, setClick] = useState("ex");
   const navigate = useNavigate()
   if (!click) {
-    return <Navigate to="/cardetailsmain" />;
+    navigate("/cardetailsmain")
   }
 
   useEffect(() => {

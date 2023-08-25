@@ -1,7 +1,35 @@
 import "./CarForm.css";
 import car from "../assets/checklist-img.jpg";
+import { useState } from "react";
+import axios from "axios"
 
 function CarForm() {
+  const [carModel, setCarModel] = useState()
+  const [carName, setCarName] = useState()
+  const [sittCap, setSittCap] = useState()
+  const [trip, setTrip] = useState()
+  const [startPoint, setStartPoint] = useState()
+  const [destPoint, setDestPoint] = useState() 
+  const [goingTime, setGoingTime] = useState() 
+  const [returnTime, setReturnTime] = useState() 
+  const [days, setDays] = useState()
+  const [price, setPrice] = useState()
+  const [desc, setDesc] = useState()
+  const [img, setImg] = useState()
+
+  const authAxios = axios.create({
+    baseURL: "http://localhost:3001/car-details",
+    headers: {
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+    }
+  })
+  const submit = (e) => {
+    e.preventDefault()
+    authAxios.post("http://localhost:3001/car-details", {carModel, carName, sittCap, trip, startPoint, destPoint, goingTime, returnTime, days, price, desc, img})
+        .then((data) =>{ 
+          console.log(data)  
+    })
+  }
   return (
     <>
       <div className="h-text">
@@ -9,7 +37,7 @@ function CarForm() {
       </div>
       <div className="m1">
         <div className="main">
-          <form action="">
+          <form action="" method="post">
             <div className="main-details">
               <div className="car-details1">
                 <div>
@@ -24,7 +52,7 @@ function CarForm() {
                     name="car modal"
                     className="cari"
                     placeholder="Enter Your Car Model"
-                    required
+                    required onChange={(e)=> setCarModel(e.target.value)}
                   />
                 </div>
                 <div className="card">
@@ -35,12 +63,12 @@ function CarForm() {
                     id="car-name"
                     placeholder="Enter Your Car's Name"
                     className="cari"
-                    required
+                    required onChange={(e)=> setCarName(e.target.value) }
                   />
                 </div>
                 <div className="card">
                   <label className="sitting"> Sitting Capacity:</label>
-                  <select name="" id="" required className="options2">
+                  <select name="" id="" required className="options2" onChange={(e)=>{setSittCap(e.target.value)}}>
                     <option value="" disabled selected hidden>
                       Choose Sitting capacity
                     </option>
@@ -55,7 +83,7 @@ function CarForm() {
                 </div>
                 <div className="card">
                   <label className="trip">Trip:</label>
-                  <select name="trip" id="" required className="options">
+                  <select name="trip" id="" required className="options" onChange={(e)=> setTrip(e.target.value) }>
                     <option value="" selected disabled hidden>
                       Select Your Trip
                     </option>
@@ -69,14 +97,14 @@ function CarForm() {
                     type="text"
                     placeholder="Starting Point"
                     className="inp1"
-                    required
+                    required onChange={(e)=> setStartPoint(e.target.value) }
                   />
                   To
                   <input
                     type="text"
                     placeholder="Destination"
                     className="inp1"
-                    required
+                    required onChange={(e)=> setDestPoint(e.target.value) }
                   />
                 </div>
                 <div className="card">
@@ -85,14 +113,14 @@ function CarForm() {
                     type="time"
                     placeholder="Going Time"
                     className="inp1"
-                    required
+                    required onChange={(e)=> setGoingTime(e.target.value) }
                   />
                   To
                   <input
                     type="time"
                     placeholder="Return Time"
                     className="inp1"
-                    required
+                    required onChange={(e)=> setReturnTime(e.target.value) }
                   />
                 </div>
                 <div className="card">
@@ -101,7 +129,7 @@ function CarForm() {
                     type="text"
                     className="cari"
                     placeholder="Enter How Many Days"
-                    required
+                    required onChange={(e)=> setDays(e.target.value) }
                   />
                 </div>
                 <div className="card">
@@ -110,7 +138,7 @@ function CarForm() {
                     type="number"
                     className="cari"
                     placeholder="Enter Price"
-                    required
+                    required onChange={(e)=> setPrice(e.target.value) }
                   />
                 </div>
                 <div className="card">
@@ -118,16 +146,16 @@ function CarForm() {
                   <input
                     type="textarea"
                     placeholder="Enter Discription"
-                    className="cari"
+                    className="cari" onChange={(e)=> setDesc(e.target.value)}
                   />
                 </div>
                 <div className="card">
                   <label className="file">Upload Car Images:</label>
-                  <input type="file" className="file1" required />
+                  <input type="file" className="file1" required  onChange={(e)=> setImg(e.target.value) }/>
                 </div>
                 <div className="btnd">
                   {" "}
-                  <button className="btn">Publish</button>
+                  <button className="btn" type="submit" onClick={submit}>Publish</button>
                 </div>
               </div>
             </div>

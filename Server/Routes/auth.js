@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const UserModel = require('../Models/User')
+const jwt = require("jsonwebtoken")
+const secretKey = "secretKey"
 
 router.post("/signup", async (req, res) => {
     const { f_name, l_name, email, phone, password } = req.body
@@ -29,7 +31,9 @@ router.post("/login", (req, res) => {
             .then(async (user) => {
                 if (user) {
                     if (password == user.password) {
-                        res.json("Success")
+                        jwt.sign(user.id, secretKey, (err, token)=>{
+                            res.json({ message: "Success",token})
+                        })
                     }
                     else {
                         res.json("Incorrect Password")

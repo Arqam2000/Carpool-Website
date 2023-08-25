@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./CarDetailsMain.css";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import car from "../assets/car-carform.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CarForm from "./CarForm";
 
 function CarDetailsMain() {
+  const navigate = useNavigate()
   const [click, setClick] = useState("ex");
   if (!click) {
     return <Navigate to="/home" />;
   }
+  useEffect(() => {
+    if (!JSON.parse(localStorage.getItem("token"))) {
+      navigate("/login")
+    }
+  })
   return (
     <>
       <div className="btn-c">

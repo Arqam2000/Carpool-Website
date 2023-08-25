@@ -44,4 +44,11 @@ router.post("/login", (req, res) => {
 
 })
 
+router.get('/getUsers', (req, res)=>{
+    UserModel.find()
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
+
 module.exports = router

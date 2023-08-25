@@ -5,16 +5,21 @@ import { Navigate } from "react-router";
 function Navbar2() {
   const [click, setClick] = useState("ex");
   const [click2, setClick2] = useState("bw");
+  const [click3, setClick3] = useState("pr");
+
   if (!click) {
     return <Navigate to="/" />;
   }
   if (!click2) {
     return <Navigate to="/about" />;
   }
+  if (!click3){
+    return <Navigate to="/profile" />
+  }
 
   return (
     <>
-      <div className="nav-container">
+      <div className="nav-container2">
         <h1 className="nav-h1">
           <span
             style={{
@@ -27,7 +32,11 @@ function Navbar2() {
           <span className="nav-span">arpool'n</span>
         </h1>
         <div className="nav-tags">
-          <p>My Profile</p>
+          <p
+            onClick={()=>{
+              setClick3(null)
+            }}
+          >My Profile</p>
           <p
             onClick={() => {
               setClick2(null);

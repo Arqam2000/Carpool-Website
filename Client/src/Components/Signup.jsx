@@ -40,11 +40,11 @@ const Signup = () => {
         setModalMessage("user already exists")
         return;
       }
-      navigate('/login');
+        navigate('/login');
     })
       .catch(err => console.log(err))
   }
-
+  
 
   return (
     <>

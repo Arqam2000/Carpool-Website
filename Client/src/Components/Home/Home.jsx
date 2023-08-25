@@ -8,7 +8,6 @@ function Home() {
   if (!click) {
     return <Navigate to="/cardetailsmain" />;
   }
-
   return (
     <>
       <div className="Navbar">

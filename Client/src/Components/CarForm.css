@@ -38,7 +38,7 @@
   margin-top: -20px;
 }
 .car-details2 {
-  margin-right: -100px;
+  margin-right: -70px;
 }
 .options {
   margin-left: 100px;
@@ -66,7 +66,7 @@
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1075px) {
   .img2 {
     visibility: hidden;
   }
@@ -74,12 +74,30 @@
     visibility: hidden;
   }
   .car-details2 {
-    margin-right: 320px;
+    margin-left: -150px;
   }
   .btnd {
     margin-left: 70px;
     margin-top: 2px;
   }
+  .main{
+    height: 120vh;
+    width: 50%;
+    
+  }
+}
+@media only screen and (max-width: 855px){
+  .car-details2{
+    margin-left: -200px;
+  }
+}
+@media only screen and (max-width: 761px){
+  .car-details2{
+    margin-left: -220px;
+    }
+    .main{
+      width: 65%;
+    }
 }
 
 @media only screen and (max-width: 580px) {
@@ -135,7 +153,10 @@
 }
 @media only screen and (max-width: 325px) {
   .car-details2 {
-    margin-right: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .cari {
     width: 200px;

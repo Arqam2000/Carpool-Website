@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Login.css'
 import { useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock } from "react-icons/fa";
@@ -14,6 +14,12 @@ function Login() {
   const [modalMessage, setModalMessage] = useState('')
 
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(JSON.parse(localStorage.getItem("token"))){
+        navigate("/home")
+    }
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();

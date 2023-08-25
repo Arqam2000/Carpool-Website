@@ -3,6 +3,7 @@ const router = express.Router()
 const UserModel = require('../Models/User')
 const jwt = require("jsonwebtoken")
 const secretKey = "secretKey"
+const verifyToken = require("../middleware/authenticate")
 
 router.post("/signup", async (req, res) => {
     const { f_name, l_name, email, phone, password } = req.body
@@ -48,10 +49,16 @@ router.post("/login", (req, res) => {
 
 })
 
-router.get('/getUsers', (req, res)=>{
-    UserModel.find()
-    .then(users => res.json(users))
-    .catch(err => res.json(err))
+router.get('/getUser', verifyToken, (req, res)=>{
+    jwt.verify(req.token, secretKey, async (err, authData) => {
+        if (err) {
+          res.status(403).json({error: "invalid token"})
+        } else {
+            UserModel.findOne({_id: authData})
+            .then(users => res.json(users))
+            .catch(err => res.json(err))
+        }
+    })
 })
 
 

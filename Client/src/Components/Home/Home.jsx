@@ -1,13 +1,20 @@
 import React from "react";
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import Navbar2 from "./Navbar2";
 
 function Home() {
   const [click, setClick] = useState("ex");
+  const navigate = useNavigate()
   if (!click) {
     return <Navigate to="/cardetailsmain" />;
   }
+
+  useEffect(() => {
+    if (!JSON.parse(localStorage.getItem("token"))) {
+      navigate("/login")
+    }
+  })
   return (
     <>
       <div className="Navbar">

@@ -8,6 +8,7 @@ function Navbar2() {
   const [click3, setClick3] = useState("pr");
 
   if (!click) {
+    localStorage.removeItem("token")
     return <Navigate to="/" />;
   }
   if (!click2) {

@@ -7,6 +7,7 @@ import user from './Images/Removal-658.png';
 const Profile = () => {
     const [path, setPath] = useState('ex')
     const [users, setUsers] = useState([])
+    const navigate = useNavigate()
 
     const authAxios = axios.create({
         baseURL: "http://localhost:3001/getUser",
@@ -26,11 +27,12 @@ const Profile = () => {
             .catch(err => console.log(err))
     }, [])
 
-    const navigate = useNavigate()
+    useEffect(()=>{
+        if (!path) {
+            navigate('/home')
+        }
+    }, [path])
 
-    if (!path) {
-        navigate('/home')
-    }
     return (
         <>
             <div className="btn-c">

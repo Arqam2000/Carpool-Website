@@ -9,14 +9,19 @@ import CarForm from "./CarForm";
 function CarDetailsMain() {
   const navigate = useNavigate()
   const [click, setClick] = useState("ex");
-  if (!click) {
-    navigate('/home')
-  }
+
+  useEffect(()=>{
+    if (!click) {
+      navigate('/home')
+    }
+  }, [click])
+
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("token"))) {
       navigate("/login")
     }
-  })
+  }, [])
+  
   return (
     <>
       <div className="btn-c">

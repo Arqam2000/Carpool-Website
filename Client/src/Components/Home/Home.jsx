@@ -10,15 +10,20 @@ import plus from "./Images/Plus.png"
 function Home() {
   const [click, setClick] = useState("ex");
   const navigate = useNavigate()
-  if (!click) {
-    navigate("/cardetailsmain")
-  }
+  
+  useEffect(()=>{
+    if (!click) {
+      navigate("/cardetailsmain")
+    }
+  }, [click])
+ 
 
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("token"))) {
       navigate("/login")
     }
-  })
+  }, [])
+  
   return (
     <>
       <div className="Navbar">

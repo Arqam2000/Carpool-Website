@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home";
 import CarDetailsMain from "./Components/CarDetailsMain";
 import About from "./Components/Home/About";
 import Profile from "./Components/Home/Profile";
+import Cards from "./Components/Car Cards/Cards";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/cardetailsmain" element={<CarDetailsMain />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/cards" element={<Cards/>}></Route>
       </Routes>
     </BrowserRouter>
   );

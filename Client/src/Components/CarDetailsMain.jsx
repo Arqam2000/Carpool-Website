@@ -9,7 +9,6 @@ import CarForm from "./CarForm";
 function CarDetailsMain() {
   const navigate = useNavigate()
   const [click, setClick] = useState("ex");
-<<<<<<< Updated upstream
 
   useEffect(()=>{
     if (!click) {
@@ -17,7 +16,6 @@ function CarDetailsMain() {
     }
   }, [click])
 
-=======
   if (!click) {
     navigate('/home')
   }
@@ -25,7 +23,6 @@ function CarDetailsMain() {
   if(!click2){
     navigate('/cards')
   }
->>>>>>> Stashed changes
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("token"))) {
       navigate("/login")

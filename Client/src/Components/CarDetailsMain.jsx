@@ -10,7 +10,7 @@ function CarDetailsMain() {
   const navigate = useNavigate()
   const [click, setClick] = useState("ex");
   if (!click) {
-    return <Navigate to="/home" />;
+    navigate('/home')
   }
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("token"))) {

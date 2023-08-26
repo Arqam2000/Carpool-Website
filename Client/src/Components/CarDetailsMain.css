@@ -27,6 +27,7 @@
 .btn:hover {
   background-color: white;
   color: rgb(255, 208, 0);
+  transition: 300ms ease-out ;
 }
 .sp {
   color: rgb(255, 208, 0);

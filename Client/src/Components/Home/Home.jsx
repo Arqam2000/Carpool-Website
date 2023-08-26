@@ -2,6 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import Navbar2 from "./Navbar2";
+import "./Home.css"
+import plus from "./Images/Plus.png"
+
+
 
 function Home() {
   const [click, setClick] = useState("ex");
@@ -20,12 +24,13 @@ function Home() {
       <div className="Navbar">
         <Navbar2 />
       </div>
-      <br />
-      <br />
-      <br />
+      
+      
+      
       <div>
-        <button onClick={() => setClick(null)}>Home</button>
+        <img src={plus} alt="" className="plus" onClick={() => setClick(null)}/>
       </div>
+   
     </>
   );
 }

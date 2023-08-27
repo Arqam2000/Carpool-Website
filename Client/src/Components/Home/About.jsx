@@ -10,7 +10,7 @@ function About() {
   return (
     <>
       <div className="btn-c">
-        <button className="btn" onClick={() => setClick(null)}>
+        <button className="btn6" onClick={() => setClick(null)}>
           Back To Home
         </button>
       </div>
@@ -26,42 +26,32 @@ function About() {
           possible, including:
         </ul>
         <li
-          style={{
-            marginLeft: "115px",
-          }}>
+         >
           A user-friendly search engine that allows you to find carpool partners
           based on your route, departure time, and other preferences.
         </li>
         <li
-          style={{
-            marginLeft: "-60px",
-          }}
+          
         >
           A messaging system so you can communicate with potential carpool
-          partners before you commit to a ride.
+          partners before you commit to a ride and save the environment.
         </li>
         <li
-          style={{
-            marginLeft: "-140px",
-          }}
+         
         >
           The benefits of carpooling, such as saving money, reducing traffic,
-          and helping the environment.
+          and helping the environment and pocket friendly as well.
         </li>
         <li
-          style={{
-            marginLeft: "-170px",
-          }}
+         
         >
           The features of your website that make it easy to find carpool
-          partners and coordinate rides.
+          partners and coordinate rides and enjoy with your new partner.
         </li>
         <li
-          style={{
-            marginLeft: "-570px",
-          }}
+         
         >
-          Your vision for the future of carpooling.
+          Your vision for the future of carpooling is not make carpooling easy for all and makes people lifes better and save money for future.
         </li>
       </div>
       <div className="developers">

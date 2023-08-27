@@ -1,14 +1,19 @@
 import "./CarPage.css"
 import car from "./car-1.png"
 import userImg from "./Removal-658.png"
-import {useLocation} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
 function CarPage() {
     const [user, setUser] = useState()
+    const [click, setClick] = useState("ko")
     const location = useLocation();
-    // console.log(location.state)
+    const navigate = useNavigate()
+
+    if (!click) {
+        navigate("/home")
+    }
 
     const authAxios = axios.create({
         baseURL: "http://localhost:3001/getUser",
@@ -25,6 +30,9 @@ function CarPage() {
     return(
         <>
         <div className="main1">
+            <div>
+                <button className="btn4" onClick={()=> setClick(null)}>Back To Home</button>
+            </div>
         <div className="main2">
             <div className="carimg"><img src={`http://localhost:3001/${location.state.img}`} alt="" />
             </div>
@@ -46,17 +54,19 @@ function CarPage() {
                 </div>
                 <div className="route">
                     <p>Trip:</p>
-                    <p className="to1">{location.state.trip}</p>
+                    <p className="to22">{location.state.trip}</p>
+                </div>
+                <div className="route">
                     <p>Seats Available:</p>
-                    <p className="to1">{location.state.sittCap}</p>
+                    <p className="to22">{location.state.sittCap}</p>
                 </div>
                 <div className="route">
                 <p>Days A Week:</p>
-                    <p className="to1">{location.state.days}</p>
+                    <p className="to22">{location.state.days}</p>
                 </div>
                 <div className="route">
                 <p>Price Per Seat:</p>
-                    <p className="to1">{location.state.price}</p>
+                    <p className="to22">{location.state.price}</p>
                 </div>
                 <div className="route2">
                 <p>Discription:</p>

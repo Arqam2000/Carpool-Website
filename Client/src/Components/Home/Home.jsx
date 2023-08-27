@@ -35,7 +35,6 @@ function Home() {
     }
     authAxios.get('http://localhost:3001/car-details')
       .then(users => {
-        console.log(users.data)
         setCars(users.data)
       })
       .catch(err => console.log(err))

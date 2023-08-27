@@ -3,10 +3,12 @@ import './Profile.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import user from './Images/Removal-658.png';
+import Cards from "../Car Cards/Cards"
 
 const Profile = () => {
     const [path, setPath] = useState('ex')
     const [users, setUsers] = useState([])
+    const [car, setCar] = useState()
     const navigate = useNavigate()
 
     const authAxios = axios.create({
@@ -25,6 +27,17 @@ const Profile = () => {
             })
             .catch(err => console.log(err))
     }, [])
+
+    useEffect(()=>{
+        if (!JSON.parse(localStorage.getItem("token"))) {
+            navigate("/login")
+        }
+        authAxios.get(`http://localhost:3001/car-details/${users._id}`)
+            .then(car => {
+                setCar(car.data)
+            })
+            .catch(err => console.log(err))
+    })
 
     useEffect(()=>{
         if (!path) {
@@ -66,6 +79,9 @@ const Profile = () => {
                         <h2>{users.phone}</h2>
                     </div>
                 </div>
+            </div>
+            <div>
+                {car && <Cards key={car._id} car={car} />}
             </div>
         </>
     )

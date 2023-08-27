@@ -60,6 +60,22 @@ router.get("/car-details", verifyToken, async (req, res)=>{
     })
     
 })
+router.get("/car-details/:id", verifyToken, async (req, res)=>{
+    jwt.verify(req.token, secretKey, async (err, authData) => {
+        if (err) {
+          res.status(403).json({error: "invalid token"})
+        } else {
+            try {
+                const {id} = req.params
+                let carDetails = await CarModel.findOne({user_id: id})
+                res.json(carDetails)
+            } catch (error) {
+                res.status(400).json("Bad request")
+            }
+        }
+    })
+    
+})
 router.get("/user/:id", verifyToken, async (req, res)=>{
     jwt.verify(req.token, secretKey, async (err, authData) => {
         if (err) {

@@ -21,7 +21,6 @@ const Profile = () => {
         }
         authAxios.get('http://localhost:3001/getUser')
             .then(users => {
-                console.log(users.data)
                 setUsers(users.data)
             })
             .catch(err => console.log(err))

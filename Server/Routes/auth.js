@@ -10,11 +10,14 @@ router.post("/signup", async (req, res) => {
     if (f_name && l_name && email, phone && password) {
         let existingUser = await UserModel.findOne({ email: email })
         if (!existingUser) {
-            UserModel.create({
-                f_name, l_name, email, phone, password
-            })
-            .then(users => res.status(201).json({success: true, users}))
-            .catch(err => res.status(500).json(err))
+            try {
+                let newUser = await UserModel.create({
+                    f_name, l_name, email, phone, password
+                })
+                res.status(201).json({success: true, data: newUser})
+            } catch (error) {
+                res.status(500).json(error)
+            }   
         } else {
             res.json("user already exists")
         }
@@ -25,24 +28,23 @@ router.post("/signup", async (req, res) => {
 
 })
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     if (email && password) {
-        UserModel.findOne({ email: email })
-            .then(async (user) => {
-                if (user) {
-                    if (password == user.password) {
-                        jwt.sign(user.id, secretKey, (err, token)=>{
-                            res.json({ message: "Success",token})
-                        })
-                    }
-                    else {
-                        res.json("Incorrect Password")
-                    }
-                } else {
-                    res.json("No Record Exists")
-                }
-            })
+        let user = await UserModel.findOne({ email: email })
+        if (user) {
+            if (password == user.password) {
+                jwt.sign(user.id, secretKey, (err, token)=>{
+                    res.json({ message: "Success",token})
+                })
+            }
+            else {
+                res.json("Incorrect Password")
+            }
+        } else {
+            res.json("No Record Exists")
+        }
+            
     } else {
         res.status(400).json({ error: "Bad request" })
     }
@@ -54,9 +56,12 @@ router.get('/getUser', verifyToken, (req, res)=>{
         if (err) {
           res.status(403).json({error: "invalid token"})
         } else {
-            UserModel.findOne({_id: authData})
-            .then(users => res.json(users))
-            .catch(err => res.json(err))
+            try {
+                let user = await UserModel.findOne({_id: authData})
+                res.json(user)
+            } catch (error) {
+                res.json(err)
+            }
         }
     })
 })

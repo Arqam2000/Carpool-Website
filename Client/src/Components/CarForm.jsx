@@ -25,7 +25,20 @@ function CarForm() {
   })
   const submit = (e) => {
     e.preventDefault()
-    authAxios.post("http://localhost:3001/car-details", {carModel, carName, sittCap, trip, startPoint, destPoint, goingTime, returnTime, days, price, desc, img})
+    const formData = new FormData()
+    formData.append("carModel", carModel)
+    formData.append("carName", carName)
+    formData.append("sittCap", sittCap)
+    formData.append("trip", trip)
+    formData.append("startPoint", startPoint)
+    formData.append("destPoint", destPoint)
+    formData.append("goingTime", goingTime)
+    formData.append("returnTime", returnTime)
+    formData.append("days", days)
+    formData.append("price", price)
+    formData.append("desc", desc)
+    formData.append("img", img)
+    authAxios.post("http://localhost:3001/car-details", formData)
         .then((data) =>{ 
           console.log(data)  
     })
@@ -151,7 +164,7 @@ function CarForm() {
                 </div>
                 <div className="card">
                   <label className="file">Upload Car Images:</label>
-                  <input type="file" className="file1" required  onChange={(e)=> setImg(e.target.value) }/>
+                  <input type="file" className="file1" required  onChange={(e)=> setImg(e.target.files[0]) }/>
                 </div>
                 <div className="btnd">
                   {" "}

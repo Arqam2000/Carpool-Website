@@ -17,7 +17,7 @@ function Cards({ car }) {
             <div className="parent">
                 <div className="main-card">
                     <div className="imgd">
-                        <img src={carImg} alt="" />
+                        <img src={`http://localhost:3001/${car.img}`} alt="" />
                     </div>
                     {/* <div className="card-detail-section">
                         <div className='card-details'>

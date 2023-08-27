@@ -26,7 +26,7 @@ function CarPage() {
         <>
         <div className="main1">
         <div className="main2">
-            <div className="carimg"><img src={car} alt="" />
+            <div className="carimg"><img src={`http://localhost:3001/${location.state.img}`} alt="" />
             </div>
             <div className="carmodel">
               <h2>{`${location.state.carModel} / ${location.state.carName} `}</h2>

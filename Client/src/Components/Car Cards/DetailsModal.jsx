@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './DetailsModal.css';
 import closeBtn from './icons8-cross-60.png';
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from 'axios';
 
 const DetailsModal = ({car, setModal }) => {
-
+    const [user, setUser] = useState()
+    const authAxios = axios.create({
+        baseURL: "http://localhost:3001/getUser",
+        headers: {
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
+        }
+    })
+    useEffect(()=>{
+        authAxios.get(`http://localhost:3001/user/${car.user_id}`)
+        .then(user => setUser(user.data))
+        .catch(err => console.log(err))
+    }, [])
+   
     return (
         <>
             <div className="modal-container">
@@ -17,7 +30,7 @@ const DetailsModal = ({car, setModal }) => {
                     <div className="details-container">
                         <div className="modal-details">
                             <h2>Name: </h2>
-                            <h2 className='modal-data'>**Name goes Here**</h2>
+                            <h2 className='modal-data'>{user && `${user.f_name} ${user.l_name}`}</h2>
                         </div>
                         <div className='modal-details'>
                             <h2>Car Name:</h2>
@@ -27,13 +40,13 @@ const DetailsModal = ({car, setModal }) => {
                         </div>
                         <div className="modal-details">
                             <h2>Description: </h2>
-                            <h2 className='modal-data'>**Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis qui amet dolores labore, similique veritatis quas dolor sapiente repellendus aut eaque reprehenderit et inventore fugit consequatur aliquid corporis dolorum saepe velit recusandae nulla! Voluptates.**</h2>
+                            <h2 className='modal-data'>{car.desc}</h2>
                         </div>
                         <div className="contact">
                             <h2>Contact: </h2>
                             <div className="contact-details">
-                                <button className="email-btn"><FaEnvelope/> **Email goes Here**</button>
-                                <button className="phone-btn"><FaPhoneAlt/> **Phone goes Here**</button>
+                                <button className="email-btn"><FaEnvelope/> {user && `${user.email}`}</button>
+                                <button className="phone-btn"><FaPhoneAlt/> {user && `${user.phone}`}</button>
                             </div>
                         </div>
                     </div>

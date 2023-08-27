@@ -16,6 +16,7 @@ function Cards({ car }) {
                     <div className="imgd">
                         <img src={carImg} alt="" />
                     </div>
+<<<<<<< Updated upstream
                     <div className="card-detail-section">
                         <div className='card-details'>
                         <h3 style={{paddingRight:'10px',color:'rgb(255,208,0)'}}>Route:</h3>
@@ -45,7 +46,40 @@ function Cards({ car }) {
                         <div className="more-details-btn">
                         <button onClick={() => { setModal(true) }}>View More Details</button>
                         <button>Book Your Ride</button>
+=======
+                    <div className="text-1">
+                        <div style={{ display: "flex" }}>
+                            <p>Starting Point:</p>
+                            <p className="ot">{car.startPoint}</p>
+                            <p>To:</p>
+                            <p className="ot">{car.destPoint}</p>
                         </div>
+                        <div className="text-2">
+                            <p>Going Time:</p>
+                            <p className="ot2">{car.goingTime}</p>
+                            <p>Return Time:</p>
+                            <p className="ot2">{car.returnTime}</p>
+                        </div>
+                        <div className="text-2">
+                            <p>Car Name:</p>
+                            <p className="ot2">{car.carName}</p>
+>>>>>>> Stashed changes
+                        </div>
+                        <div className="text-2">
+                            <p>Seats Available: </p>
+                            <p className="ot2">{car.sittCap}</p>
+                        </div>
+                        <div className="text-2">
+                            <p>Days A Week: </p>
+                            <p className="ot2">{car.days}</p>
+                        </div>
+                        <div className="text-2">
+                            <p>Price Per Seat:</p>
+                            <p className="ot2">{car.price}</p>
+                            <button className="btn">Book A Ride</button>
+                        </div>
+
+                        
                     </div>
                 </div>
                 {modal && (<DetailsModal

@@ -3,11 +3,15 @@ import "./Cards.css"
 import carImg from "./car-1.png"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { useNavigate } from 'react-router'
 
 function Cards({ car }) {
 
-    const [modal, setModal] = useState(false)
-
+    const [click, setClick] = useState("ko")
+    const navigate = useNavigate()
+if(!click) {
+    navigate('/carpage')
+}
 
     return (
         <>
@@ -16,8 +20,7 @@ function Cards({ car }) {
                     <div className="imgd">
                         <img src={carImg} alt="" />
                     </div>
-<<<<<<< Updated upstream
-                    <div className="card-detail-section">
+                    {/* <div className="card-detail-section">
                         <div className='card-details'>
                         <h3 style={{paddingRight:'10px',color:'rgb(255,208,0)'}}>Route:</h3>
                             <h3>From:</h3>
@@ -45,8 +48,7 @@ function Cards({ car }) {
                         </div>
                         <div className="more-details-btn">
                         <button onClick={() => { setModal(true) }}>View More Details</button>
-                        <button>Book Your Ride</button>
-=======
+                        <button>Book Your Ride</button> */}
                     <div className="text-1">
                         <div style={{ display: "flex" }}>
                             <p>Starting Point:</p>
@@ -63,7 +65,6 @@ function Cards({ car }) {
                         <div className="text-2">
                             <p>Car Name:</p>
                             <p className="ot2">{car.carName}</p>
->>>>>>> Stashed changes
                         </div>
                         <div className="text-2">
                             <p>Seats Available: </p>
@@ -74,24 +75,28 @@ function Cards({ car }) {
                             <p className="ot2">{car.days}</p>
                         </div>
                         <div className="text-2">
-                            <p>Price Per Seat:</p>
-                            <p className="ot2">{car.price}</p>
-                            <button className="btn">Book A Ride</button>
+                            <p className='b'>Price Per Seat:</p>
+                            <p className="ot3">{car.price}</p>
+                            <button className="btn" onClick={()=>setClick(null)}>Book A Ride</button>
                         </div>
 
                         
                     </div>
                 </div>
-                {modal && (<DetailsModal
+                </div>
+                </>
+    )}
+                
+                {/* {modal && (<DetailsModal
                     setModal = {setModal}
                     key={car._id} car={car}
                 />)}
             </div>
 
-
-
-        </>
-    )
-}
+</div>
+</div> */}
+        
+    {/* )
+} */}
 
 export default Cards; 

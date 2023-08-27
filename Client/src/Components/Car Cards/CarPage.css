@@ -1,0 +1,88 @@
+.main1{
+    display: flex;
+    justify-content: center;
+    background-color: #EEF6FF;
+    
+}
+.main2{
+    width: 60%;
+    /* height: 200vh; */
+   
+    background-color: white;
+    
+}
+.carimg{
+    border-bottom: 1px solid lavender;
+    height: 60vh;
+    border-left: 1px solid lavender;
+    border-right: 1px solid lavender;
+}
+.carmodel{
+    padding-left: 30px;
+    color: #8491A7;
+    border-bottom: 1px solid lavender;
+    padding-bottom: 25px;
+    margin-top: 2px;
+    
+}
+.route{
+    display: flex;
+    font-size: large;
+    font-weight: 600;
+    padding-left:30px;
+    padding-top: 2px;
+
+}
+.to1{
+    color: #8491A7;
+    width: 300px;
+    padding-left: 10px;
+}
+.route2{
+    font-size: large;
+    font-weight: 600;
+    padding-left:30px;
+    padding-top: 2px;
+}
+.to2{
+    color: #8491A7;
+    
+    padding-left: 90px;
+    padding-right: 10px;
+}
+.details{
+    border-bottom: 1px solid lavender;
+    padding-bottom: 40px;
+}
+.ownerdetails h2{
+    padding-left: 30px;
+}
+.userpic{
+    height: 80px;
+    width: 160px;
+    display: flex;
+}
+.user p{
+    font-size: x-large;
+    font-weight: 600;
+    color: #8491A7;
+}
+.usercontact{
+    display: flex;
+    flex-direction: row;
+    font-size: larger;
+    font-weight: 600;
+    justify-content: center;
+    padding-bottom: 100px;
+    
+}
+.to4{
+    color: #8491A7;
+    padding-right: 50px;
+    padding-left: 4px;
+}
+.to5{
+    color: #8491A7;
+    padding-left: 4px;
+    margin-right: 70px;
+}

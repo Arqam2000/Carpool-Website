@@ -1,25 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './DetailsModal.css';
 import closeBtn from './icons8-cross-60.png';
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import axios from 'axios';
 
 const DetailsModal = ({car, setModal }) => {
-    const [user, setUser] = useState()
-    const authAxios = axios.create({
-        baseURL: "http://localhost:3001/getUser",
-        headers: {
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
-        }
-    })
-    useEffect(()=>{
-        authAxios.get(`http://localhost:3001/user/${car.user_id}`)
-        .then(user => setUser(user.data))
-        .catch(err => console.log(err))
-    }, [])
-   
+    
     return (
         <>
             <div className="modal-container">

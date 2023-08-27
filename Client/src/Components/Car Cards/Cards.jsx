@@ -1,17 +1,16 @@
 import DetailsModal from './DetailsModal'
 import "./Cards.css"
 import carImg from "./car-1.png"
-import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from 'react-router'
 
 function Cards({ car }) {
 
     const [click, setClick] = useState("ko")
     const navigate = useNavigate()
-if(!click) {
-    navigate('/carpage')
-}
+    if (!click) {
+        navigate('/carpage', { state: car })
+    }
 
     return (
         <>
@@ -77,17 +76,18 @@ if(!click) {
                         <div className="text-2">
                             <p className='b'>Price Per Seat:</p>
                             <p className="ot3">{car.price}</p>
-                            <button className="btn" onClick={()=>setClick(null)}>Book A Ride</button>
+                            <button className="btn" onClick={() => setClick(null)}>Book A Ride</button>
                         </div>
 
-                        
+
                     </div>
                 </div>
-                </div>
-                </>
-    )}
-                
-                {/* {modal && (<DetailsModal
+            </div>
+        </>
+    )
+}
+
+{/* {modal && (<DetailsModal
                     setModal = {setModal}
                     key={car._id} car={car}
                 />)}
@@ -95,8 +95,8 @@ if(!click) {
 
 </div>
 </div> */}
-        
-    {/* )
+
+{/* )
 } */}
 
 export default Cards; 

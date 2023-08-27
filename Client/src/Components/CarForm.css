@@ -59,6 +59,21 @@
 .card {
   margin-top: 5px;
 }
+.btn55 {
+  width: 120px;
+  height: 40px;
+  font-size: medium;
+  border-radius: 5px;
+  border: 0.5px solid;
+  background-color: rgb(255, 208, 0);
+  color: white;
+  font-weight: bold;
+}
+.btn55:hover {
+  background-color: white;
+  color: rgb(255, 208, 0);
+  transition: 300ms ease-out ;
+}
 @media only screen and (max-width: 1115px) {
   .img2 {
     height: 60vh;

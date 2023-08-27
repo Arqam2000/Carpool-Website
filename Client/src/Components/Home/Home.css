@@ -10,4 +10,28 @@
     transition: 300ms ease-in-out;
 
 }
+.poster1{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hh1{
+    color: rgb(255, 208, 0);
+    font-size: 5em;
+}
+.hh2{
+    font-size: 4em;
+}
+.sp1{
+    color: black;
+}
+.sp2{
+    color: rgb(255, 208, 0); 
+}
+
+
+
  

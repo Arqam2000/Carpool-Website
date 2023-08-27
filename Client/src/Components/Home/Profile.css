@@ -48,3 +48,8 @@ img{
 .last{
     margin-bottom: 20px;
 }
+.publishes{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}

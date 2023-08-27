@@ -80,7 +80,9 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='cardpro'>
+             <div className='publishes'> 
+                 <h1>Your Publishes</h1></div>
                 {car && <Cards key={car._id} car={car} />}
             </div>
         </>

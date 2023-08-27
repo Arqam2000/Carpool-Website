@@ -6,6 +6,7 @@ import "./Home.css"
 import plus from "./Images/Plus.png"
 import axios from "axios"
 import Cards from "../Car Cards/Cards";
+// import Modal from "../Modal";
 
 
 
@@ -48,6 +49,7 @@ function Home() {
       <div>
         <img src={plus} alt="" className="plus" onClick={() => setClick(null)} />
       </div>
+      {/* <Modal/> */}
       {cars.map(car => <Cards key={car._id} car={car} />)}
     </>
   );

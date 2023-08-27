@@ -25,7 +25,10 @@ function About() {
           We offer a variety of features to make carpooling as convenient as
           possible, including:
         </ul>
-        <li>
+        <li
+          style={{
+            marginLeft: "115px",
+          }}>
           A user-friendly search engine that allows you to find carpool partners
           based on your route, departure time, and other preferences.
         </li>
@@ -60,6 +63,14 @@ function About() {
         >
           Your vision for the future of carpooling.
         </li>
+      </div>
+      <div className="developers">
+        <h1>Developed By:</h1>
+        <ul>
+          <li><h2>Arqam Sarwar</h2></li>
+          <li><h2>Ayan Mirza</h2></li>
+          <li><h2>Mohib Ur Rehman Niazi</h2></li>
+        </ul>
       </div>
     </>
   );

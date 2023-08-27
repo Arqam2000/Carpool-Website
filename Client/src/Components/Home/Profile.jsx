@@ -43,14 +43,6 @@ const Profile = () => {
                 >Back to Home</button>
             </div>
             <div className="user">
-                {/* {users.map(users =>{
-            return (
-                <>
-                <h1>{users.email}</h1>
-                <h1>{users.f_name} {users.l_name}</h1>
-                </>
-                );
-        })} */}
                 <div className="profile-header">
                     <div className="img-container">
                         <img src={user} alt="" />

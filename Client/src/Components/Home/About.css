@@ -44,3 +44,22 @@
   font-weight: 500;
   font-size: 18px;
 }
+.developers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+}
+.developers h1{
+  color: rgb(255, 208, 0);
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.developers ul{
+  display: flex;
+  gap: 150px;
+}
+.developers h2{
+  font-size: 2rem;
+}

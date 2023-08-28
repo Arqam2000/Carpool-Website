@@ -1,45 +1,48 @@
 .parent{
     display: flex;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px; 
+    margin-top: 30px; 
 }
 .main-card{
- width: 800;
- height: 180px;
+ width: 900px;
+ height: 220px;
  display: flex;
  box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
  border-radius: 10px;
 }
 .card-detail-section{
     padding-top: 10px;
+    padding-left: 20px;
 }
-.img{
-    border-right: 0.3px solid black;
-    width: 180px;
-    height: 180px;
-
+.imgd{
+    width: 300px;
+    height: 220px;
 }
-/* <<<<<<< Updated upstream
+.imgd img{
+    width: 99%;
+    height: 99%;
+    border-radius: 10px;
+}
 .data{
     padding-left: 5px;
 }
 .card-details{
     display: flex;
+    font-size: 1.1rem;
 }
 .more-details-btn{
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content:space-evenly;
+    justify-content:flex-end;
 }
 .more-details-btn button{
     height: 40px;
     width: 160px;
     border: none;
     border-radius: 8px;
-    color: #fff;
+    color: rgb(0,0,0);
     font-size: 1.1rem;
     font-weight: 700;
     background-color: rgb(255,208,0);
@@ -49,54 +52,45 @@
     border: 4px solid rgb(255,208,0);
     color: rgb(255,208,0);
 }
-======= */
-.text-1{
-    font-weight: 600;
-    margin-top: 7px;
-    margin-left: 7px;
-    font-size: medium;
+@media (max-width:920px) {
+    .parent{
+        flex-wrap: wrap;
+    }
+    .main-card{
+        flex-direction: column;
+        width: 500px;
+        height: max-content;
+    }
+    .imgd{
+        width: 500px;
+        height: max-content;
+    }
+    .more-details-btn{
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    .card-detail-section{
+        padding:10px 5px;
+    }
 }
-.ot{
-    color:  rgb(255, 208, 0);
-    width: 200px;
-    margin-left: 8px;
-    
-
+@media (max-width: 520px) {
+    .main-card{
+        width: 350px;
+    }
+    .imgd{
+        width: 350px;
+    }
+    .card-detail-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-details{
+        flex-direction: column;
+        text-align: justify;
+    }
+    .more-details-btn{
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
 }
-.ot2{
-    color:  rgb(255, 208, 0);
-    width: 100px;
-    margin-left: 8px;
-    
-
-}
-.ot3{
-    color:  rgb(255, 208, 0);
-    width: 100px;
-    margin-left: -8px;
-}
-.text-2{
-    display: flex;
-    margin-top: 4px;
-}
-.btn {
-    width: 120px;
-    height: 40px;
-    font-size: medium;
-    border-radius: 5px;
-    border: 0.5px solid;
-    background-color: rgb(255, 208, 0);
-    color: white;
-    font-weight: bold;
-    margin-top: -20px;
-    margin-left: 180px;
-  }
-  .btn:hover {
-    background-color: white;
-    color: rgb(255, 208, 0);
-    transition: 300ms ease-out ;
-  }
-  .b{
-    width: 120px;
-  }
-

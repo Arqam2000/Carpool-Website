@@ -1,14 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar2 from "./Navbar2";
 import "./Home.css"
 import plus from "./Images/Plus.png"
 import axios from "axios"
 import Cards from "../Car Cards/Cards";
-import car from "./Images/carposter.webp"
-// import Modal from "../Modal";
-
 
 
 function Home() {
@@ -48,13 +45,15 @@ function Home() {
       </div>
       
       <div>
+        <div className="plus-div">
         <img src={plus} alt="" className="plus" onClick={() => setClick(null)} />
+        <h2>Add your Ride</h2>
+        </div>
         <div className="poster1">
         <h1 className="hh1">All Set And All <span className="sp1">Ready</span> Now</h1>
-        <h1 className="hh2">Just <span className="sp2">Scroll</span> Down And Get Partner </h1>
+        <h1 className="hh2"><span className="sp2">Scroll</span> Down And Get Your <span className="sp2">K</span>arpool Buddy!</h1>
         </div>
       </div>
-      {/* <Modal/> */}
       {cars.map(car => <Cards key={car._id} car={car} />)}
     </>
   );

@@ -14,6 +14,12 @@ app.use("/", route)
 app.use("/", car_route)
 
 mongoose.connect(uri)
+.then(() => console.log("Mongodb Connected Successfully"))
+.catch((err) => console.log("Mongodb connection failed", err))
+
+app.get("/", (req, res) => {
+    res.status(200).json({success: true, data: {}, message: "Server is running..."})
+})
 
 app.listen(3001,() => {
     console.log("Server is listening at port 3001")
